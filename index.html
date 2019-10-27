@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Train</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container page">
+            <h1 class="display-4">Crazy Train</h1>
+            <p class="lead">We got the best worst train drivers in history. How many trains did we derail last year?”<br>
+                We can't say for sure, it’s so hard to keep track!”.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <p>Current Train Schedule</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>frankenstein Express</td>
+                        <td>Naples</td>
+                        <td>900</td>
+                        <td>11:59 PM</td>
+                        <td>200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            Add another crazy train
+            <form>
+                <div class="form-group">
+                    <label for="trainName">Train Name</label>
+                    <input type="text" class="form-control" id="trainName" aria-describedby="emailHelp"
+                        placeholder="Enter text">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="firstTrain">First Train Time(HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="firstTrain" aria-describedby="emailHelp"
+                        placeholder="Enter text">
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency(min)</label>
+                    <input type="text" class="form-control" id="frequency" placeholder="">
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="assets/javascript/app.js">
+    
+    </script>
+</body>
+</html>
