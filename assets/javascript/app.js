@@ -1,4 +1,5 @@
-var firebaseConfig = {
+var firebaseConfig = 
+{
     apiKey: "AIzaSyDUILboNzEcQYOj2LJzjVvTtqYGehAoO0o",
     authDomain: "test-project-7bc13.firebaseapp.com",
     databaseURL: "https://test-project-7bc13.firebaseio.com",
@@ -10,7 +11,10 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-    var database = firebase.database();
+var database = firebase.database();
+
+
+var frequency = 0;
 
 $("#submit-btn").on("click", function () {
     event.preventDefault();
@@ -27,21 +31,47 @@ $("#submit-btn").on("click", function () {
             firstTrain: firstTrain,
             frequency: frequency
         });
-
+   clearForm()
 });
 
 database.ref().on("child_added", function(snapshot)
 {
-    console.log(snapshot.val().trainName);
-    console.log(snapshot.val().destination);
-    console.log(snapshot.val().firstTrain);
-    console.log(snapshot.val().frequency);
 
+
+    var nameSnap = snapshot.val().trainName;
+    var destinationSnap = snapshot.val().destination;
+    var firstTrainSnap = snapshot.val().firstTrain;
+    var frequencySnap = snapshot.val().frequency;
+
+    var timeConverted = moment(firstTrainSnap, "HH:mm").subtract(1, "years");
+
+    var timeDiff = moment().diff(moment(timeConverted), "minutes");
+    var timeRemain = timeDiff % frequencySnap;
+    var minToArrival = frequencySnap - timeRemain;
+    var nextTrain = moment().add(minToArrival, "minutes").format("hh:mm");
+    console.log(timeDiff);
+    console.log(timeRemain);
+    
     var createRow = $("<tr>").append(
-    $("<td>").html(snapshot.val().trainName),
-    $("<td>").html(snapshot.val().destination),
-    $("<td>").html(snapshot.val().firstTrain),
-    $("<td>").html(snapshot.val().frequency)
+    $("<td>").text(nameSnap),
+    $("<td>").text(destinationSnap),
+    $("<td>").text(snapshot.val().frequency),
+    $("<td>").text(nextTrain),
+    $("<td>").text(minToArrival),
     );
     $("tbody").append(createRow);
 });
+function clearForm ()
+{
+    $("#trainName").val("");
+    $("#destination").val("");
+    $("#firstTrain").val("");
+    $("#frequency").val(""); 
+}
+function currentTime() 
+{
+    var current = moment().format('LT');
+    $("#currentTime").html(current);
+    setTimeout(currentTime, 1000);
+};
+currentTime();

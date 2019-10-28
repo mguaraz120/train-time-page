@@ -15,6 +15,7 @@
             <h1 class="display-4">Crazy Train</h1>
             <p class="lead">We got the best worst train drivers in history. How many trains did we derail last year?”<br>
                 We can't say for sure, it’s so hard to keep track!”.</p>
+            <p class="pull-right" id="currentTime"></p>    
         </div>
     </div>
     <div class="card">
@@ -31,14 +32,7 @@
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>frankenstein Express</td>
-                        <td>Naples</td>
-                        <td>900</td>
-                        <td>11:59 PM</td>
-                        <td>200</td>
-                    </tr>
+                <tbody class = "newRoute">
                 </tbody>
             </table>
         </div>
@@ -49,21 +43,19 @@
             <form>
                 <div class="form-group">
                     <label for="trainName">Train Name</label>
-                    <input type="text" class="form-control" id="trainName" aria-describedby="emailHelp"
-                        placeholder="Enter text">
+                    <input type="text" class="form-control form-field" id="trainName">
                 </div>
                 <div class="form-group">
                     <label for="destination">Destination</label>
-                    <input type="text" class="form-control" id="destination" placeholder="">
+                    <input type="text" class="form-control form-field" id="destination">
                 </div>
                 <div class="form-group">
                     <label for="firstTrain">First Train Time(HH:mm - military time)</label>
-                    <input type="text" class="form-control" id="firstTrain" aria-describedby="emailHelp"
-                        placeholder="Enter text">
+                    <input type="text" class="form-control form-field" id="firstTrain">
                 </div>
                 <div class="form-group">
                     <label for="frequency">Frequency(min)</label>
-                    <input type="text" class="form-control" id="frequency" placeholder="">
+                    <input type="text" class="form-control form-field" id="frequency">
                 </div>
 
                 <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
@@ -74,7 +66,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" integrity="sha256-1hjUhpc44NwiNg8OwMu2QzJXhD8kcj+sJA3aCQZoUjg=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="assets/javascript/app.js">
     
