@@ -61,8 +61,6 @@ database.ref().on("child_added", function(snapshot)
     var timeRemain = timeDiff % frequencySnap;
     var minToArrival = frequencySnap - timeRemain;
     var nextTrain = moment().add(minToArrival, "minutes").format("hh:mm");
-    console.log(timeDiff);
-    console.log(timeRemain);
     
     var createRow = $("<tr>").append(
     $("<td>").text(nameSnap),
