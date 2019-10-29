@@ -16,24 +16,36 @@ var database = firebase.database();
 
 var frequency = 0;
 
-$("#submit-btn").on("click", function () {
+$("#submit-btn").on("click", function () 
+    {
     event.preventDefault();
-    trainName =   $("#trainName").val().trim();
-    destination = $("#destination").val().trim();
-    firstTrain =  $("#firstTrain").val().trim();
-    frequency =   $("#frequency").val().trim();
+    if ($("#trainName").val().trim() === "" ||
+        $("#destination").val().trim() === "" ||
+        $("#firstTrain").val().trim() === "" ||
+        $("#frequency").val().trim() === "") {
 
-    
-    database.ref().push
-        ({
-            trainName: trainName,
-            destination: destination,
-            firstTrain: firstTrain,
-            frequency: frequency
-        });
-   clearForm()
+        alert("Please fill in all details to add new train");
+
+    } 
+    else 
+    {
+        trainName =   $("#trainName").val().trim();
+        destination = $("#destination").val().trim();
+        firstTrain =  $("#firstTrain").val().trim();
+        frequency =   $("#frequency").val().trim();
+
+        
+        database.ref().push(
+            {
+                trainName: trainName,
+                destination: destination,
+                firstTrain: firstTrain,
+                frequency: frequency
+            });
+        clearForm()
+    }
 });
-
+    
 database.ref().on("child_added", function(snapshot)
 {
 

@@ -1,3 +1,52 @@
+
+body{
+    background-color: #FFFACD;
+}
 .page{
+    padding-top: -70px;
+    text-align: left;
+    font-family:'Schoolbell', cursive;
+    color:#FF0000;
+    background-color: #FFFACD;
+}
+.page h1{
+   
     text-align: center;
+    color:#8B008B;
+    font-size: 50px;
+}
+.time{
+    text-align: right;
+    color:#800000;
+}
+.page p{
+    font-size: 24px;
+    font: bolder;
+}
+img{
+    width: 100%;
+}
+.jumbotron{
+    background-image: url("../images/images/Trains.jpg");
+    background-color: #FF69B4 ;
+    height: 310px;
+}
+.main{
+    background-color: #DDA0DD;
+}
+.form0 p{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;   
+}
+.form1{
+    background-color: #DDA0DD;
+}
+.form2{
+    font-family: 'Fredericka the Great', cursive;
+}
+.form2 p{
+    font-size: 20px;   
+}
+#submit-btn:hover{
+    color: ghostwhite;
 }

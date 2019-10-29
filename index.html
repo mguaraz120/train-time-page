@@ -7,19 +7,20 @@
     <title>My Train</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container page">
-            <h1 class="display-4">Crazy Train</h1>
+            <h1 class="display-4">Crazy Train Schedule</h1>
             <p class="lead">We got the best worst train drivers in history. How many trains did we derail last year?”<br>
                 We can't say for sure, it’s so hard to keep track!”.</p>
-            <p class="pull-right" id="currentTime"></p>    
+            <p class="time" id="currentTime"></p>    
         </div>
     </div>
-    <div class="card">
-        <div class="card-body">
+    <div class="card main">
+        <div class="card-body form0">
             <p>Current Train Schedule</p>
             <table class="table table-striped">
                 <thead>
@@ -37,9 +38,9 @@
             </table>
         </div>
     </div>
-    <div class="card">
-        <div class="card-body">
-            Add another crazy train
+    <div class="card form1">
+        <div class="card-body form2">
+            <p>Add Another Crazy Train</p>   
             <form>
                 <div class="form-group">
                     <label for="trainName">Train Name</label>
