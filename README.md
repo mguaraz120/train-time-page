@@ -6,3 +6,13 @@ The user inputs new train name, start time and frequency to schedule. Then, it d
 ## Application Image
 <img src="assets/images/Train.PNG">
 
+## Technology
+___
+
+* Javascript
+* jQuerry
+* HTML
+* CSS3
+* Firebase
+* Moment.js
+
