@@ -7,7 +7,6 @@ The user inputs new train name, start time and frequency to schedule. Then, it d
 <img src="assets/images/Train.PNG">
 
 ## Technology
-___
 
 * Javascript
 * jQuerry
